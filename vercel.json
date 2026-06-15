@@ -2,6 +2,6 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "buildCommand": "next build",
-  "installCommand": "npm install --no-audit --no-fund --legacy-peer-deps --ignore-scripts --prefer-offline",
+  "installCommand": "pnpm install --frozen-lockfile",
   "outputDirectory": ".next"
 }
