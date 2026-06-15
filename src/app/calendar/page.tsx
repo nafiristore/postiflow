@@ -60,8 +60,8 @@ export default function CalendarPage() {
   // Auth check
   React.useEffect(() => {
     let mounted = true;
-    supabase.auth.getUser().then(({ data: { user } }) => {
-      if (mounted && !user) router.push("/login");
+    supabase.auth.getUser().then((response: { data: { user: unknown } }) => {
+      if (mounted && !response.data.user) router.push("/login");
     });
     return () => {
       mounted = false;

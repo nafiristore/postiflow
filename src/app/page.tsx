@@ -3,6 +3,9 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { Button } from "@/components/ui/button";
 
+// Force on-demand rendering so missing Supabase env vars don't break the build.
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   // If the user is already signed in, send them straight to the dashboard.
   const supabase = await createClient();
